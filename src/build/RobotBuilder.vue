@@ -64,7 +64,7 @@ export default {
     }
   },
   created() {
-    this.$store.dispatch('getParts');
+    this.$store.dispatch('robots/getParts');
     console.log('component RobotBuilder created!');
   },
   data() {
@@ -91,7 +91,7 @@ export default {
     addToCart() {
       const robot = this.selectedRobot;
       const cost = Object.values(robot).reduce((a, b) => a + b.cost, 0);
-      this.$store.dispatch('addRobotToCart', { ...robot, cost })
+      this.$store.dispatch('robots/addRobotToCart', { ...robot, cost })
         .then(() => this.$router.push('/cart'));
       this.addedToCart = true;
     },

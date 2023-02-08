@@ -10,12 +10,18 @@ export default {
     },
   },
   getters: {
+    foo(state, getters, rootState) {
+      return `users-getter/${rootState.foo}`;
+    },
   },
   actions: {
     signIn({ commit }) {
       axios.post('/api/sign-in')
         .then((result) => commit('updateCurrentUser', result.data))
         .catch(console.error);
+    },
+    foo(state) {
+      return `users-getter/${state.foo}`;
     },
   },
 };
