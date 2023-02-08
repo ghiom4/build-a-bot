@@ -1,8 +1,10 @@
 import axios from 'axios';
 
 export default {
+  namespaced: true,
   state: {
     user: null,
+    foo: 'users-foo',
   },
   mutations: {
     updateCurrentUser(state, user) {

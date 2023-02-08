@@ -12,8 +12,8 @@ export default createStore({
     users: usersModule,
   },
   getters: {
-  /*     foo(state) {
+    foo(state) {
       return `root-getter/${state.foo}`;
-    }, */
+    },
   },
 });
